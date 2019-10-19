@@ -9,5 +9,3 @@ def geolocator(year_month, file_name):
     location = geolocator.reverse(loc)
     
     return location.address
-
-# print(geolocator("2005-02", "sr7933"))
