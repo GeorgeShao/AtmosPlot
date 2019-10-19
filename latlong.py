@@ -5,7 +5,6 @@ import ftp_functions as ftp
 def returnlatlong(year_month, file_name):
 
     file = f"{year_month}/{file_name}/{file_name}_InfoMetadata .txt"  # XXX: space before .txt
-    print(file)
     meta = ftp.cat(file)
 
     list2 = meta.split('\n')

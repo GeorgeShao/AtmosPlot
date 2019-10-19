@@ -1,7 +1,7 @@
 from ftplib import FTP
 import os
 
-BASE = "users/OpenData_DonneesOuvertes/pub/SCISAT/Data_format CSV/"
+BASE = "/users/OpenData_DonneesOuvertes/pub/SCISAT/Data_format CSV/"
 ftp = FTP('ftp.asc-csa.gc.ca')
 ftp.login()
 
@@ -17,3 +17,6 @@ def cat(path_to_file: str):
 def ls(directory: str):
     ftp.cwd(f"{BASE}{directory}/")
     return ftp.nlst()
+
+def quit():
+    ftp.quit()
