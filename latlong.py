@@ -17,4 +17,3 @@ def returnlatlong(file_name):
     return [latitude,longitude]
 
     
-print(returnlatlong("sr7933"))
