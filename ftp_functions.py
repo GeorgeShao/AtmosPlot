@@ -15,5 +15,5 @@ def cat(path_to_file: str):
     return return_string
 
 def ls(directory: str):
-    ftp.cwd(f"{BASE}{directory}")
+    ftp.cwd(f"{BASE}{directory}/")
     return ftp.nlst()
