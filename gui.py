@@ -1,10 +1,15 @@
 import matplotlib.pyplot as plt
 from main import DATA
+import numpy as np
 
-x_axis = []
-for i in range(1,151):
-    x_axis.append(i)
+for i in range(len(DATA) // 2):
+    #master_ozone.append()
+    #master_acid.append()
 
-plt.plot(x_axis, x_axis)
+
+    plt.scatter(list(range(1, 151)), DATA[i*2], color='blue') #ozone
+    plt.scatter(list(range(1, 151)), DATA[(i*2)+1], color='red') #Hydrochloric acid
+
+plt.xlabel('Elevation (km)')
 plt.ylabel('Concentration (ppm)')
 plt.show()
