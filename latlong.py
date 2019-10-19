@@ -1,13 +1,12 @@
 import os
 from checkFileExists import checkFileExists
+import ftp_functions as ftp
 
-def returnlatlong(file_name):
-    location_file = f"{file_name}_InfoMetadata"
+def returnlatlong(year_month, file_name):
 
-    file = "./PartialDataset/"+file_name+"/"+location_file+".txt"
+    file = f"{year_month}/{file_name}/{file_name}_InfoMetadata.txt"
 
-    if checkFileExists(file):
-        meta = open(file,"r+")
+    
 
     list2 = meta.readlines()
     latitude = list2[19][10:]
