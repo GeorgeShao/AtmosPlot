@@ -20,4 +20,6 @@ for i in range(len(DATA) // DATA_POINT_SPLIT):
 ax1.set_xlabel('Elevation (km)')
 ax1.set_ylabel('Concentration (ppm)')
 ax2.set_ylabel('Concentration (ppm)')
+ax1.set_ylim(ymin=0)
+ax2.set_ylim(ymin=0)
 plt.show()
