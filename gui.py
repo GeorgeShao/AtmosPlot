@@ -1,16 +1,20 @@
 import matplotlib.pyplot as plt
+import matplotlib
 from main import DATA
 import numpy as np
 
 fig, ax1 = plt.subplots()
+DATA_POINT_SPLIT = 3
 
-for i in range(len(DATA) // 2):
-    #master_ozone.append()
-    #master_acid.append()
 
-    ax1.scatter(list(range(1, 151)), DATA[i*2], color='blue', s=1) #ozone
+for i in range(len(DATA) // DATA_POINT_SPLIT):
+    coords = DATA[i*DATA_POINT_SPLIT+2]
+    red_amount = (coords[0] + 90) / 180
+    blue_amount = (coords[2] + 180) / 360
+    # print(red_amount, blue_amount)
+    ax1.scatter(list(range(1, 151)), DATA[i*DATA_POINT_SPLIT], facecolor=matplotlib.colors.to_hex((red_amount, 0, blue_amount),keep_alpha=False), s=1, marker='.')  # ozone
     ax2 = ax1.twinx()
-    ax2.scatter(list(range(1, 151)), DATA[(i*2)+1], color='red', s=1) #Hydrochloric acid
+    ax2.scatter(list(range(1, 151)), DATA[(i*DATA_POINT_SPLIT)+1], facecolor=matplotlib.colors.to_hex((red_amount, 1, blue_amount),keep_alpha=False), s=1, marker='v')  # hydrochloric acid
 
 
 ax1.set_xlabel('Elevation (km)')
